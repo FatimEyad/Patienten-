@@ -18,11 +18,10 @@ export default async function NewAppointment({ params: { userId } }: SearchParam
             className="mb-12 h-10 w-fit"
           />
 
-          <AppointmentForm
-            userId={userId}
-            type="create"
-            patientId={patient?.$id}
-          />
+             <AppointmentForm
+              patientId={patient?.$id}
+              userId={userId}
+              type="create"      />
 
           <p className="copyright mt-10 py-12">© 2024 CarePluse</p>
         </div>

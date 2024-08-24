@@ -26,9 +26,9 @@ const  AppointmentForm=(
     {
         userId,
         patientId,
-        type ,
+        type = "create" ,
         appointment,
-        setOpen
+        setOpen,
       }: {
         userId: string;
         patientId: string;
@@ -56,7 +56,7 @@ const  AppointmentForm=(
     },
   });
 
- 
+ console.log('i cannot')
   // 2. Define a submit handler.
   async function  onSubmit(values: z.infer<typeof AppointmentFormValidation>){
     setIsLoading(true);
@@ -72,9 +72,12 @@ const  AppointmentForm=(
       default:
         status = "pending";
     }
+    console.log('i cannotcreate')
 
     try {
         if (type === "create" && patientId) {
+          console.log('i cannotcreatefatima' )
+
           const appointmentData = {
             userId,
             patient: patientId,
@@ -87,10 +90,10 @@ const  AppointmentForm=(
           const newAppointment = await createAppointment(appointmentData);
 
     
-          if (appointment) {
+          if (newAppointment) {
             form.reset();
             router.push(
-              `/patients/${userId}/new-appointment/success?appointmentId=${appointment.$id}`
+              `/patients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`
             );
           }
         } else{
