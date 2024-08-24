@@ -22,9 +22,7 @@ export default async function NewAppointment({ params: { userId } }: SearchParam
               patientId={patient?.$id}
               userId={userId}
               type="create" 
-              setOpen={function (open: boolean): void {
-                throw new Error("Function not implemented.");
-              } }      />
+               />
 
           <p className="copyright mt-10 py-12">© 2024 CarePluse</p>
         </div>
