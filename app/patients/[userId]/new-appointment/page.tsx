@@ -21,7 +21,8 @@ export default async function NewAppointment({ params: { userId } }: SearchParam
              <AppointmentForm
               patientId={patient?.$id}
               userId={userId}
-              type="create" setOpen={function (open: boolean): void {
+              type="create" 
+              setOpen={function (open: boolean): void {
                 throw new Error("Function not implemented.");
               } }      />
 
